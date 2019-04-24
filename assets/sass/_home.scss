@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: center;
         color: white;
-        *{
+        h2, input, label{
             width: 70%;
         }
         h2{
@@ -35,7 +35,7 @@
         label:nth-of-type(2){
             margin-top: 1.5rem;
         }
-        button{
+        .check-btn{
             margin-top: 2.5rem;
             width: fit-content;
             align-self: center;
@@ -51,6 +51,16 @@
                 background: #304ffe;
                 color: white;
             }
+        }
+
+    }
+}
+.react-datepicker-wrapper{
+    width: 70%;
+    .react-datepicker__input-container{
+        width: 100% !important;
+        input{
+            width: 100% !important;
         }
     }
 }

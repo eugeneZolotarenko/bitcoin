@@ -7,21 +7,27 @@ class Layout extends Component {
   constructor () {
     super()
     this.state = {
-      location: 'home'
+      location: 'home',
+      date: new Date()
     }
     this.routingSystem = this.routingSystem.bind(this)
+    this.handleDateChange = this.handleDateChange.bind(this)
   }
   routingSystem(){
     switch(this.state.location) {
       case 'home':
-        return <Home />
-        break;
+        return <Home handleDateChange = {this.handleDateChange} globalState={this.state} />
       case 'results':
         return <Results />
-        break;
       default:
-        return  <Home /> 
+        return  <Home handleDateChange = {this.handleDateChange} globalState={this.state} /> 
     }
+  }
+
+  handleDateChange(date) {
+    this.setState({
+      date: date
+    }, () => console.log(this.state.date));
   }
 
   render () {
@@ -35,8 +41,6 @@ class Layout extends Component {
            <a href="#">Register</a>
          </nav>
        </header>
-       {/* <Home /> */}
-       {/* <Results /> */}
        {this.routingSystem()}
      </div>
     </div>)

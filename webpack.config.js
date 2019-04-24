@@ -2,6 +2,8 @@
 const path = require('path');
 const webpack = require('webpack')
 
+process.traceDeprecation = true;
+
 const VENDOR_LIBS = [
   'babel-polyfill', 'redux', 'react-redux', 'react-dom'
 ]
@@ -19,12 +21,12 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            [ 'es2015', { modules: false } ],
-            'stage-0', 'react'
-          ]
-        }
+        // options: {
+        //   presets: [
+        //     [ 'es2015', { modules: false } ],
+        //     'stage-0', 'react'
+        //   ]
+        // }
       },
       {
             test: /\.scss$/,

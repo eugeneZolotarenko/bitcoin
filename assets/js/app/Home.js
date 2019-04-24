@@ -1,11 +1,11 @@
 import React, { Component} from 'react'
-// import ReactDOM from 'react-dom'
+import DatePicker from "react-datepicker"
+
 
 export default class Home extends Component {
   constructor () {
     super()
     this.state = {
-      name: 'Joe'
     }
   }
 
@@ -21,9 +21,13 @@ export default class Home extends Component {
            <input type="text" name="amount" />
 
            <label>Date</label>
-           <input type="text" name="date" />
+           {/* <input type="text" name="date" /> */}
+           <DatePicker
+              selected={this.props.globalState.date}
+              onChange={this.props.handleDateChange}
+            />
 
-           <button type="submit">Check Profits</button>
+           <button className="check-btn" type="submit">Check Profits</button>
          </form>
          
        </div>
