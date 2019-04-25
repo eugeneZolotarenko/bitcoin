@@ -2,13 +2,14 @@ import React, { Component} from 'react'
 import ReactDOM from 'react-dom'
 import Home from './Home'
 import Results from './Results'
+import moment from 'moment'
 
 class Layout extends Component {
   constructor () {
     super()
     this.state = {
       location: 'home',
-      date: new Date()
+      date: moment()
     }
     this.routingSystem = this.routingSystem.bind(this)
     this.handleDateChange = this.handleDateChange.bind(this)
