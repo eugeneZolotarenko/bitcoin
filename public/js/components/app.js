@@ -228,7 +228,7 @@ var Layout = function (_Component) {
 
     _this.state = {
       location: 'home',
-      date: (0, _moment2.default)()
+      date: new Date()
     };
     _this.routingSystem = _this.routingSystem.bind(_this);
     _this.handleDateChange = _this.handleDateChange.bind(_this);
@@ -253,7 +253,7 @@ var Layout = function (_Component) {
       var _this2 = this;
 
       this.setState({
-        date: date
+        date: Math.round(date.getTime() / 1000)
       }, function () {
         return console.log(_this2.state.date);
       });

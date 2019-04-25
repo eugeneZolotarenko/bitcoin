@@ -9,7 +9,7 @@ class Layout extends Component {
     super()
     this.state = {
       location: 'home',
-      date: moment()
+      date: new Date()
     }
     this.routingSystem = this.routingSystem.bind(this)
     this.handleDateChange = this.handleDateChange.bind(this)
@@ -27,7 +27,7 @@ class Layout extends Component {
 
   handleDateChange(date) {
     this.setState({
-      date: date
+      date: Math.round((date).getTime() / 1000)
     }, () => console.log(this.state.date));
   }
 
